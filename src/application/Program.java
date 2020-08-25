@@ -45,6 +45,15 @@ public class Program {
 		sellerDao.update(newSeller2);		
 		newSeller2 = sellerDao.fingById(id);
 		System.out.println("Updated! "+ newSeller2);
+		
+		System.out.println("\n=== Test 6: seller delete ===");
+		id= 12;
+		seller = sellerDao.fingById(id);
+		System.out.println(seller);
+		System.out.println("Deleting seller id = " + id);
+		sellerDao.deleteById(id);
+		seller = sellerDao.fingById(id);
+		System.out.println(seller != null ? seller : "Seller not found!");
 	}
 
 }
