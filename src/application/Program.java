@@ -15,7 +15,7 @@ public class Program {
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
 		System.out.println("=== Test 1: seller findById ===");
-		Seller seller = sellerDao.fingById(3);		
+		Seller seller = sellerDao.findById(3);		
 		System.out.println(seller);
 		
 		System.out.println("\n=== Test 2: seller findByDepartment ===");
@@ -39,20 +39,20 @@ public class Program {
 		System.out.println("\n=== Test 5: seller update ===");
 		Integer id =  1;
 		System.out.println("Updating seller id = " + id);
-		Seller newSeller2 = sellerDao.fingById(id);
+		Seller newSeller2 = sellerDao.findById(id);
 		System.out.println(newSeller2);
 		newSeller2.setName("Bobby");
 		sellerDao.update(newSeller2);		
-		newSeller2 = sellerDao.fingById(id);
+		newSeller2 = sellerDao.findById(id);
 		System.out.println("Updated! "+ newSeller2);
 		
 		System.out.println("\n=== Test 6: seller delete ===");
 		id= 12;
-		seller = sellerDao.fingById(id);
+		seller = sellerDao.findById(id);
 		System.out.println(seller);
 		System.out.println("Deleting seller id = " + id);
 		sellerDao.deleteById(id);
-		seller = sellerDao.fingById(id);
+		seller = sellerDao.findById(id);
 		System.out.println(seller != null ? seller : "Seller not found!");
 	}
 
