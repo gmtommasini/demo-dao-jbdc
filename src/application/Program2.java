@@ -1,18 +1,16 @@
 package application;
 
-import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
-import model.entities.Department;
 import model.entities.Department;
 
 public class Program2 {
 
 	public static void main(String[] args) {
 		
-		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao(); //This program does not know the implementation of DAO
 		
 		System.out.println("=== Test 1: department findById ===");
 		Department Department = departmentDao.findById(3);		

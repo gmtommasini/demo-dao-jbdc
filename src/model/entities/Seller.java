@@ -24,6 +24,18 @@ public class Seller implements Serializable{
 		this.baseSalary = baseSalary;
 		this.department = department;
 	}
+	
+	public Seller(String name, String email, Date birthDate, Double baseSalary, Department department) {
+		/* This constructor can be used to create a Seller before inserting into DataBase.
+		 * The ID is created by the DB */
+		this.id = null;
+		this.name = name;
+		this.email = email;
+		this.birthDate = birthDate;
+		this.baseSalary = baseSalary;
+		this.department = department;
+	}
+	
 	public Integer getId() {
 		return id;
 	}

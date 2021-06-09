@@ -1,6 +1,6 @@
 package model.entities;
 
-import java.io.Serializable;
+import java.io.Serializable; //java requires this Serializable to allow objects to be converted to bits (files and network)
 
 public class Department implements Serializable{
 	

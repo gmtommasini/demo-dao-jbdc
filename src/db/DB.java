@@ -14,17 +14,17 @@ public class DB {
 	private static Connection conn = null;
 
 	public static Connection getConnection() {
-
+		//if not connected, create connection
 		if (conn == null) {
 			try {
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
 				conn = DriverManager.getConnection(url, props);
+				// DriverManager is part of the MySQL lib
 			} catch (SQLException e) {
 				throw new DbException(e.getMessage());
 			}
 		}
-
 		return conn;
 	}
 
@@ -34,12 +34,12 @@ public class DB {
 				conn.close();
 			} catch (SQLException e) {
 				throw new DbException(e.getMessage());
-
 			}
 		}
 	}
 
 	private static Properties loadProperties() {
+		// reading from the properties file in the project's root
 		try (FileInputStream fs = new FileInputStream("db.properties")) {
 			Properties props = new Properties();
 			props.load(fs);
